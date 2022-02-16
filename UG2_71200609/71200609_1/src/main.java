@@ -19,7 +19,7 @@ public class main {
     if(KodeLampu == 1){
         System.out.println("-----Lampu Hijau-----");
         Mobil.jalan();
-        PejalanKaki.berhenti();}
+        PejalanKaki.menunggu();}
     }
 
 }
