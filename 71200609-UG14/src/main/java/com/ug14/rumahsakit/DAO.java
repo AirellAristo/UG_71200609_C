@@ -1,27 +1,14 @@
 package com.ug14.rumahsakit;
 
+import java.sql.*;
+
 public class DAO {
-    public Dokter getDokterByID(int a){
-        return null;
+    public void inputPasien(Pasien pasien) throws SQLException {
+        String url = "jdbc:mysql://localhost:3306/rumahsakit";
+        Connection conn = DriverManager.getConnection(url,"root","");
+        Statement statement = conn.createStatement();
+        String sql = "INSERT INTO pasien values ('"+pasien.getRm()+"','"+pasien.getNama()+"','"+pasien.getUsia()+"','"+pasien.getAlamat()+"')";
+        statement.executeUpdate(sql);
     }
 
-    public Suster getSusterByID(int a){
-        return null;
-    }
-
-    public Pelayanan getPelayananByID(int a){
-        return null;
-    }
-
-    public void inputPasien(Pasien pasien){
-
-    }
-
-    public void inputJadwal(Jadwal jadwal){
-
-    }
-
-    public static int getPasienSembuh(){
-        return 10;
-    }
 }
